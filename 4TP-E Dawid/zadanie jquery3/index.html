@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>wprowadzenie jquery</title>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <!-- <script>
+            $(function(){
+                $("#test").on("click",function(){
+                    console.log("nasz event");
+                });
+                $("#test").click(function(){
+                    console.log("nasz event 2");
+                })
+            });
+        </script> -->
+            <script>
+                $(function() {
+                    $("#przywitaj").click(function(){
+                        $("#komunikat").prepend().text("Cześć!");
+                    });
+                    // $("#przywitaj").click(function(){
+                    //     alert("Cześć!");
+                    // });
+                    $("#kwadrat").click(function(){
+                        $("#kwadrat").css("background-color","red");
+                    })
+                    $("#resetuj").click(function(){
+                        $("#kwadrat").css("background-color","lightgray");
+                        $("#komunikat").text("");
+                    })
+                    let licznik = 0;
+                    $("#kwadrat").click(function(){
+                        licznik++;
+                        $("#licznik").text("kliknieto"+licznik+"razy");
+                    })
+                });
+            </script>
+          <style>
+    #kwadrat { width: 150px; height: 150px; background: lightgray; }
+  </style>
+    </head>
+    <body>
+    <button id="przywitaj">Przywitaj się</button>
+    <button id="resetuj">Resetuj</button>
+
+    <p id="komunikat"></p>
+    <p id="licznik"></p>
+    <div id="kwadrat"></div>
+    
+</body>
+</html>
