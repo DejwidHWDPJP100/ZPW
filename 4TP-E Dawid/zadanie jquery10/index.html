@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wprowadzenie jquery</title>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <script>
+            $(function(){
+                $("#zmiana").click(function(){
+                    $("#text").toggle();
+                })
+                $("#schowaj").click(function(){
+                    $("#ukryj").hide();
+                })
+                $("#pokaz").click(function(){
+                    $("#ukryj").show();
+                })
+                $("#gora").click(function(){
+                    $("#skok").slideUp();
+                })
+                $("#dol").click(function(){
+                    $("#skok").slideDown();
+                })
+                $("#kit").click(function(){
+                    $("#cos").slideToggle();
+                })
+            })
+        </script>
+</head>
+<body>
+    <button id="zmiana">ukryj/pokaz</button>
+    <button id="pokaz">pokaz</button>
+    <button id="schowaj">ukryj</button>
+    <p id="text">jestem</p>
+    <p id="ukryj"> schowaj mnie</p>
+    <br>
+    <button id="gora">gora</button>
+    <button id="dol">dol</button>
+    <p id="skok">buuu</p>
+    <button id="kit">cos</button>
+    <p id="cos">cos</p>
+</body>
+</html>
