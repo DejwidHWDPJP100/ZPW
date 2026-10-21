@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>wprowadzenie jquery</title>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <script>
+            $(function(){
+                $("#sprawdz").click(function(){
+                    if($("#tekst").val().trim() === ""){
+                        $("#komunikat").text("To pole jest puste")
+                    }else{
+                        $("#komunikat").text($("#tekst").val())
+                    }
+                })
+                    $("#wyslij").click(function(){
+                    if($("#nazwisko").val().trim() === ""){
+                        $("#info").text("Podaj nazwisko").css("color","red")
+                    }else{
+                        $("#info").text("Wysłano formularz").css("color","green")
+                    }
+                })
+                $("#spr").click(function(){
+                    let wiek = $("#wiek").val()
+                    if(isNaN(wiek)){
+                        $("#blad").text("Wiek musi być liczbą")
+                    }else{
+                        $("#blad").text("Masz "+ wiek + " lat")
+                    }
+                })
+                $("#zapisz").click(function(){
+                    let ocena = $("#ocena").val()
+                    if(isNaN(ocena)){
+                        $("#cos").text("podaj ocene jako cyfre")
+                    }
+                    else if(ocena.trim() === ""){
+                        $("#cos").text("Wpisz ocene")
+                    }
+                    else if(ocena < 0 || ocena > 6){
+                        $("#cos").text("Ocena musi być z zakresu 1-6")
+                    }else{
+                        $("#cos").text("Zapisano ocenę: " + ocena)
+                    }
+                })
+            })
+            
+        </script>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <input type="text" id="tekst">
+        <input type="button" value="Check" id="sprawdz">
+        <p id="komunikat"></p>
+        <hr>
+        <input type="text" id="nazwisko">
+        <button type="submit" id="wyslij">Wyślij</button>
+        <p id="info"></p>
+        <hr>
+        <input type="text" id="wiek">
+        <button type="submit" id="spr">Wyślij</button>
+        <p id="blad"></p>
+        <input type="text" id="ocena">
+        <button id="zapisz">Zapisz</button>
+        <p id="cos"></p>
+        
+    </body>
+</html>
